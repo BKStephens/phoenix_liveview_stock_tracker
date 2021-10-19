@@ -13,7 +13,11 @@ config :phoenix_liveview_stock_tracker,
 # Configures the endpoint
 config :phoenix_liveview_stock_tracker, PhoenixLiveviewStockTrackerWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: PhoenixLiveviewStockTrackerWeb.ErrorView, accepts: ~w(html json), layout: false],
+  render_errors: [
+    view: PhoenixLiveviewStockTrackerWeb.ErrorView,
+    accepts: ~w(html json),
+    layout: false
+  ],
   pubsub_server: PhoenixLiveviewStockTracker.PubSub,
   live_view: [signing_salt: "N+7N8EiN"]
 
@@ -24,7 +28,8 @@ config :phoenix_liveview_stock_tracker, PhoenixLiveviewStockTrackerWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :phoenix_liveview_stock_tracker, PhoenixLiveviewStockTracker.Mailer, adapter: Swoosh.Adapters.Local
+config :phoenix_liveview_stock_tracker, PhoenixLiveviewStockTracker.Mailer,
+  adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false
@@ -45,6 +50,13 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+config :phoenix_liveview_stock_tracker, http_client: HTTPoison
+
+config :phoenix_liveview_stock_tracker,
+  alpha_vantage_api_client: PhoenixLiveviewStockTracker.AlphaVantageApiClient
+
+import_config "#{config_env()}.secret.exs"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

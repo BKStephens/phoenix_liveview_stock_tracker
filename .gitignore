@@ -32,3 +32,4 @@ phoenix_liveview_stock_tracker-*.tar
 npm-debug.log
 /assets/node_modules/
 
+config/dev.secret.exs
