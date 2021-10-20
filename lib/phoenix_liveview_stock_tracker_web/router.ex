@@ -17,7 +17,7 @@ defmodule PhoenixLiveviewStockTrackerWeb.Router do
   scope "/", PhoenixLiveviewStockTrackerWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", StocksLive
   end
 
   # Other scopes may use custom stacks.

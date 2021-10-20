@@ -87,3 +87,11 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.autocomplete-search-form {
+  display: flex;
+}
+
+.autocomplete-search-form input[type=submit] {
+  margin-left: 5px;
+}
