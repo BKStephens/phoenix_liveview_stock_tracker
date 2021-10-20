@@ -13,6 +13,18 @@ defmodule PhoenixLiveviewStockTracker.AlphaVantageApiClientStub do
     }
   end
 
+  def get_time_series("TSLA") do
+    {
+      :ok,
+      %{
+        time_series: %{
+          "2021-10-18 19:05:00" => %{price: "246.1800"},
+          "2021-10-18 19:10:00" => %{price: "246.6800"}
+        }
+      }
+    }
+  end
+
   def get_time_series(_) do
     {
       :error,
