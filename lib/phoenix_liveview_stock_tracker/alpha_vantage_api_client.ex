@@ -21,6 +21,25 @@ defmodule PhoenixLiveviewStockTracker.AlphaVantageApiClient do
     end
   end
 
+  def search_stocks(query) do
+    with {:ok, %{status_code: 200, body: raw_body}} <-
+           http_client().get(
+             "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=#{query}&apikey=#{@api_key}'"
+           ),
+         {:ok, %{"bestMatches" => raw_matches}} <- Poison.decode(raw_body) do
+      matches =
+        raw_matches
+        |> Enum.map(fn x ->
+          %{
+            symbol: x["1. symbol"],
+            name: x["2. name"]
+          }
+        end)
+
+      {:ok, matches}
+    end
+  end
+
   defp http_client do
     Application.get_env(:phoenix_liveview_stock_tracker, :http_client)
   end

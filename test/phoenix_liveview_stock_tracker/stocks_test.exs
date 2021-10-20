@@ -27,4 +27,37 @@ defmodule PhoenixLiveviewStockTracker.StocksTest do
                 "Something went wrong. Please make sure you are passing in a valid stock symbol."}
     end
   end
+
+  describe "search_stocks" do
+    test "returns results for Tesl" do
+      actual = Stocks.search_stocks("Tesl")
+
+      assert actual ==
+               {:ok,
+                [
+                  %{
+                    symbol: "TSLA",
+                    name: "Tesla Inc"
+                  },
+                  %{
+                    symbol: "TL0.DEX",
+                    name: "Tesla Inc"
+                  },
+                  %{
+                    symbol: "TL0.FRK",
+                    name: "Tesla Inc"
+                  },
+                  %{
+                    symbol: "TSLA34.SAO",
+                    name: "Tesla Inc"
+                  }
+                ]}
+    end
+
+    test "returns empty results for INVALID" do
+      actual = Stocks.search_stocks("INVALID")
+
+      assert actual == {:ok, []}
+    end
+  end
 end

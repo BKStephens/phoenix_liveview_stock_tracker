@@ -10,6 +10,10 @@ defmodule PhoenixLiveviewStockTracker.Stocks do
     end
   end
 
+  def search_stocks(query) do
+    alpha_vantage_api_client().search_stocks(query)
+  end
+
   defp alpha_vantage_api_client do
     Application.get_env(:phoenix_liveview_stock_tracker, :alpha_vantage_api_client)
   end
