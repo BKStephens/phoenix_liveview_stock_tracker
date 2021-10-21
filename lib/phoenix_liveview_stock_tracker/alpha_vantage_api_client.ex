@@ -29,6 +29,7 @@ defmodule PhoenixLiveviewStockTracker.AlphaVantageApiClient do
          {:ok, %{"bestMatches" => raw_matches}} <- Poison.decode(raw_body) do
       matches =
         raw_matches
+        |> Enum.filter(fn x -> x["4. region"] == "United States" end)
         |> Enum.map(fn x ->
           %{
             symbol: x["1. symbol"],

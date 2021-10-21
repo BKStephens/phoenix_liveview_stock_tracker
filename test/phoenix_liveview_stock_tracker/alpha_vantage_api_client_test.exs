@@ -67,18 +67,6 @@ defmodule PhoenixLiveviewStockTracker.AlphaVantageApiClientTest do
                   %{
                     symbol: "TSLA",
                     name: "Tesla Inc"
-                  },
-                  %{
-                    symbol: "TL0.DEX",
-                    name: "Tesla Inc"
-                  },
-                  %{
-                    symbol: "TL0.FRK",
-                    name: "Tesla Inc"
-                  },
-                  %{
-                    symbol: "TSLA34.SAO",
-                    name: "Tesla Inc"
                   }
                 ]}
     end
