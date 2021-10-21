@@ -16,7 +16,7 @@ defmodule PhoenixLiveviewStockTracker.StocksTest do
     test "returns Apple stock info when AAPL passed in" do
       actual = Stocks.get_stock("AAPL")
 
-      assert actual == {:ok, %{symbol: "AAPL", price: "146.6800"}}
+      assert actual == {:ok, %{symbol: "AAPL", price: "$146.68"}}
     end
 
     test "returns an error when invalid symbol passed in" do

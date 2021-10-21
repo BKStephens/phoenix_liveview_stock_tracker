@@ -1,8 +1,9 @@
 defmodule PhoenixLiveviewStockTracker.Stocks do
   def get_stock(symbol) do
     with {:ok, %{time_series: time_series}} <- alpha_vantage_api_client().get_time_series(symbol),
-         {_, %{price: price}} = Map.to_list(time_series) |> List.last() do
-      {:ok, %{symbol: symbol, price: price}}
+         {_, %{price: raw_price}} <- Map.to_list(time_series) |> List.last(),
+         {:ok, price} <- Money.parse(raw_price, :USD) do
+      {:ok, %{symbol: symbol, price: Money.to_string(price)}}
     else
       _ ->
         {:error,

@@ -51,6 +51,7 @@ defmodule PhoenixLiveviewStockTracker.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:httpoison, "~> 1.8"},
       {:poison, "~> 5.0"},
+      {:money, "~> 1.0"},
       {:mox, "~> 1.0", only: :test}
     ]
   end
