@@ -88,18 +88,27 @@
   cursor: pointer;
 }
 
-.autocomplete-search {
+.autocomplete-search-form {
   display: flex;
+  margin-bottom: 5px;
 }
 
-.autocomplete-search input[type=submit] {
+.autocomplete-search-form input[type=submit] {
   margin-left: 5px;
 }
 
-.autocomplete-search input {
+.autocomplete-search-form input {
   margin-bottom: 5px;
 }
 
 .error {
   color: red;
+  margin-bottom: 5px;
+}
+
+.stock-details {
+  padding: 1em;
+  background: #f4f5f6;
+  border-left: 0.3rem solid #0069d9;
+  font-family: monospace;
 }

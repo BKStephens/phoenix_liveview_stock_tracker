@@ -31,7 +31,7 @@ defmodule PhoenixLiveviewStockTrackerWeb.StocksLiveTest do
 
     :ok = TestHelper.wait_for_mailbox_to_drain(view.pid)
 
-    assert render(view) =~ "<pre>TSLA 246.6800</pre>"
+    assert render(view) =~ "<div class=\"stock-details\">TSLA 246.6800</div>"
   end
 
   test "user sees error when hitting Alpha Vantage rate limit while searching", %{conn: conn} do
