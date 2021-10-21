@@ -24,7 +24,7 @@ defmodule PhoenixLiveviewStockTracker.StocksTest do
 
       assert actual ==
                {:error,
-                "Something went wrong. Please make sure you are passing in a valid stock symbol."}
+                "Something went wrong. Please make sure you are passing in a valid stock symbol or try again in a minute."}
     end
   end
 

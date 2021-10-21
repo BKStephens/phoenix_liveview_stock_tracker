@@ -25,6 +25,10 @@ defmodule PhoenixLiveviewStockTracker.AlphaVantageApiClientStub do
     }
   end
 
+  def get_time_series("RATELIMIT") do
+    {:error, "Rate limit message from Alpha Vantage here"}
+  end
+
   def get_time_series(_) do
     {
       :error,
@@ -58,6 +62,10 @@ defmodule PhoenixLiveviewStockTracker.AlphaVantageApiClientStub do
         }
       ]
     }
+  end
+
+  def search_stocks("RATELIMIT") do
+    {:error, "Rate limit message from Alpha Vantage here"}
   end
 
   def search_stocks(_) do

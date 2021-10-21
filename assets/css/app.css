@@ -88,10 +88,18 @@
   cursor: pointer;
 }
 
-.autocomplete-search-form {
+.autocomplete-search {
   display: flex;
 }
 
-.autocomplete-search-form input[type=submit] {
+.autocomplete-search input[type=submit] {
   margin-left: 5px;
+}
+
+.autocomplete-search input {
+  margin-bottom: 5px;
+}
+
+.error {
+  color: red;
 }

@@ -37,6 +37,8 @@ defmodule PhoenixLiveviewStockTracker.AlphaVantageApiClient do
         end)
 
       {:ok, matches}
+    else
+      {:ok, body} -> {:error, body}
     end
   end
 

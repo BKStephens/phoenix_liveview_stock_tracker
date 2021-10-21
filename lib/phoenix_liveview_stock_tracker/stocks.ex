@@ -6,12 +6,17 @@ defmodule PhoenixLiveviewStockTracker.Stocks do
     else
       _ ->
         {:error,
-         "Something went wrong. Please make sure you are passing in a valid stock symbol."}
+         "Something went wrong. Please make sure you are passing in a valid stock symbol or try again in a minute."}
     end
   end
 
   def search_stocks(query) do
-    alpha_vantage_api_client().search_stocks(query)
+    with {:ok, matches} <- alpha_vantage_api_client().search_stocks(query) do
+      {:ok, matches}
+    else
+      _ ->
+        {:error, "Something went wrong. Please try again in a minute."}
+    end
   end
 
   defp alpha_vantage_api_client do
