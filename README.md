@@ -1,5 +1,13 @@
 # PhoenixLiveviewStockTracker
 
+I made this project to practice Elixir/Phoenix after not using it for a while, and to
+try out LiveView. This app uses Alpha Vantage's API to power stock search suggestions
+and pull back the current stock price. I may eventually add a feature to display
+recent tweets that mention the selected stock and have the server push updates
+to the client periodically.
+
+![Demo](./demo.gif)
+
 ## Setup
 
 ```
