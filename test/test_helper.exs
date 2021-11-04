@@ -1,5 +1,4 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(PhoenixLiveviewStockTracker.Repo, :manual)
 
 Mox.defmock(PhoenixLiveviewStockTracker.AlphaVantageApiClientMock,
   for: PhoenixLiveviewStockTracker.AlphaVantageApiClientBehaviour

@@ -7,9 +7,6 @@
 # General application configuration
 import Config
 
-config :phoenix_liveview_stock_tracker,
-  ecto_repos: [PhoenixLiveviewStockTracker.Repo]
-
 # Configures the endpoint
 config :phoenix_liveview_stock_tracker, PhoenixLiveviewStockTrackerWeb.Endpoint,
   url: [host: "localhost"],
